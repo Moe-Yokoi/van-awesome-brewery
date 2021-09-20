@@ -1,0 +1,300 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box; }
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+  padding: 0; }
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth; }
+
+body {
+  background-color: #fcefc5;
+  font-family: "Roboto", sans-serif; }
+
+h2 {
+  padding: 80px;
+  margin: 0 auto; }
+
+a {
+  text-decoration: none; }
+
+li {
+  list-style: none; }
+
+.hamburger-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 30px;
+  position: fixed;
+  background: black;
+  border-radius: 50%; }
+  .hamburger-wrap .hamburger {
+    display: flex;
+    height: 50px;
+    width: 50px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 100;
+    cursor: pointer; }
+    .hamburger-wrap .hamburger span {
+      content: '';
+      display: block;
+      height: 3px;
+      width: 23px;
+      border-radius: 3px;
+      background: #ffa600;
+      transition: 0.5s;
+      position: absolute; }
+      .hamburger-wrap .hamburger span:before {
+        content: '';
+        display: block;
+        height: 3px;
+        width: 23px;
+        border-radius: 3px;
+        background: #ffa600;
+        transition: 0.5s;
+        position: absolute;
+        bottom: 8px; }
+      .hamburger-wrap .hamburger span:after {
+        content: '';
+        display: block;
+        height: 3px;
+        width: 23px;
+        border-radius: 3px;
+        background: #ffa600;
+        transition: 0.5s;
+        position: absolute;
+        top: 8px; }
+  .hamburger-wrap #check:checked ~ .hamburger span {
+    background: none; }
+  .hamburger-wrap #check:checked ~ .hamburger span::before {
+    bottom: 0;
+    transform: rotate(45deg); }
+  .hamburger-wrap #check:checked ~ .hamburger span::after {
+    top: 0;
+    transform: rotate(-45deg); }
+  .hamburger-wrap #check:checked ~ .menu-container {
+    left: 0; }
+  .hamburger-wrap .menu-container {
+    width: 100%;
+    height: 100%;
+    padding-top: 80px;
+    position: fixed;
+    top: 0;
+    left: 100%;
+    z-index: 99;
+    background: black;
+    transition: .5s; }
+    .hamburger-wrap .menu-container li {
+      padding: 15px; }
+      .hamburger-wrap .menu-container li a {
+        color: white;
+        font-size: 20px; }
+        .hamburger-wrap .menu-container li a:hover {
+          color: #ffa600; }
+
+.nav-wrap {
+  width: 100%;
+  z-index: 100; }
+  .nav-wrap nav {
+    position: fixed;
+    width: 100%; }
+    .nav-wrap nav ul {
+      display: flex;
+      justify-content: center;
+      background-color: black;
+      width: 100%;
+      margin: 0;
+      padding: 0; }
+      .nav-wrap nav ul li {
+        padding: 15px 10px;
+        color: white;
+        cursor: pointer;
+        font-size: 25px; }
+        .nav-wrap nav ul li:hover {
+          color: #ffa600; }
+
+hr {
+  width: 80%;
+  border: 1px solid gray; }
+
+button {
+  width: 150px;
+  height: 30px;
+  margin: 50px auto 80px auto;
+  border: none;
+  background-color: black;
+  color: white;
+  transition: 0.5s; }
+  button:hover {
+    background-color: #ffa600;
+    color: black; }
+
+@media (min-width: 901px) {
+  .hamburger-wrap {
+    display: none; } }
+
+@media (max-width: 900px) {
+  .hamburger-wrap {
+    display: none; }
+  .nav-wrap nav ul li {
+    font-size: 20px; } }
+
+@media (max-width: 600px) {
+  .hamburger-wrap {
+    display: block; }
+  .nav-wrap {
+    display: none; } }
+
+.header {
+  width: 100%;
+  height: 80vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0)), url("../images/beers.jpg") no-repeat center/cover;
+  text-align: center;
+  z-index: 0;
+  padding-top: 200px; }
+  .header .name h1 {
+    color: white;
+    font-size: 60px;
+    font-style: italic; }
+
+.brewery-pub {
+  text-align: center; }
+  .brewery-pub .description {
+    width: 80%;
+    margin: 0 auto; }
+    .brewery-pub .description p {
+      padding: 0 0 80px 0;
+      letter-spacing: 1px; }
+
+.gallery-wrap {
+  text-align: center;
+  z-index: 0; }
+  .gallery-wrap .gallery-items {
+    display: flex;
+    flex-wrap: wrap; }
+    .gallery-wrap .gallery-items .gallery {
+      width: calc(100% / 3);
+      height: 30vw; }
+      .gallery-wrap .gallery-items .gallery img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%; }
+      .gallery-wrap .gallery-items .gallery:hover {
+        opacity: 0.5; }
+
+.testimonial {
+  text-align: center; }
+  .testimonial .testimonial-container {
+    display: flex;
+    justify-content: center; }
+    .testimonial .testimonial-container .testimonial-wrap {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 80%;
+      padding-bottom: 80px; }
+      .testimonial .testimonial-container .testimonial-wrap img {
+        width: 200px;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 50%; }
+      .testimonial .testimonial-container .testimonial-wrap p {
+        letter-spacing: 1px;
+        padding-left: 20px;
+        font-style: italic; }
+
+.contact-us {
+  text-align: center; }
+  .contact-us form {
+    max-width: 400px;
+    margin: auto; }
+    .contact-us form .form-wrap {
+      width: 100%;
+      text-align: left;
+      padding: 10px 0; }
+      .contact-us form .form-wrap label {
+        display: block;
+        padding: 5px; }
+      .contact-us form .form-wrap #name, .contact-us form .form-wrap #email {
+        width: 100%;
+        height: 30px;
+        font-size: 20px; }
+      .contact-us form .form-wrap #message {
+        width: 100%;
+        height: 300px;
+        font-size: 20px;
+        font-family: "Roboto", sans-serif;
+        font-weight: 100; }
+
+footer {
+  background-color: black;
+  padding: 20px 0; }
+  footer .footer-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+    footer .footer-wrap h3 {
+      color: white; }
+    footer .footer-wrap ul {
+      display: flex;
+      justify-content: space-between;
+      width: 80px;
+      padding: 0 20px; }
+      footer .footer-wrap ul li a {
+        text-decoration: none; }
+        footer .footer-wrap ul li a i {
+          color: white;
+          font-size: 20px;
+          transition: 0.7;
+          padding: 0 10px; }
+          footer .footer-wrap ul li a i:hover {
+            color: #ffa600; }
+
+@media (max-width: 600px) {
+  h2 {
+    padding: 40px; }
+  .header {
+    height: 40vh;
+    padding-top: 100px; }
+    .header .name h1 {
+      font-size: 30px; }
+  .brewery-pub .description {
+    width: 90%; }
+  .gallery-wrap .gallery-items .gallery {
+    width: calc(100% /2);
+    height: 50vw; }
+  .testimonial .testimonial-container .testimonial-wrap {
+    flex-direction: column; }
+    .testimonial .testimonial-container .testimonial-wrap img {
+      width: 150px;
+      height: 150px;
+      margin-bottom: 20px; }
+  .contact-us form {
+    max-width: 300px; }
+  footer {
+    padding: 10px 0; }
+    footer .footer-wrap h3 {
+      font-size: 15px;
+      font-style: italic; }
+    footer .footer-wrap ul {
+      width: 100px; }
+      footer .footer-wrap ul li a i {
+        padding: 0 5px; } }

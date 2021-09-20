@@ -1,0 +1,70 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+  padding: 0;
+  
+}
+
+
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+
+// Variables
+
+$color-orange:rgb(255, 166, 0);
+$background:rgb(252, 239, 197);
+$roboto:'Roboto', sans-serif;
+
+@mixin hamburger{
+  content: '';
+    display: block;
+    height: 3px;
+    width: 23px;
+    border-radius: 3px;
+    background:$color-orange;
+    transition: 0.5s;
+    position: absolute;
+}
+
+
+//background and font
+
+body{
+  background-color: $background;
+  font-family: $roboto;
+}
+
+h2{
+  padding: 80px;        
+  margin:0 auto;
+}
+
+// text-decoration and list style
+
+a{
+  text-decoration: none;
+}
+
+li{
+  list-style: none;
+}
